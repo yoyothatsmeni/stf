@@ -22,7 +22,15 @@ client.user.setAvatar(argresult);
       } else     
 if (message.content.startsWith(adminprefix + 'st')) {
   client.user.setGame(argresult, "https://www.twitch.tv/idk");
-    message.channel.sendMessage(`**تم تغيير تويتش البوت إلى  ${argresult}**`)
+    message.channel.sendMessage(`**تم تغيير تويتش البوت إلى  ${argresult}**`);
+      } else
+        if (message.content.startsWith(adminprefix + 'wt')) {
+          client.user.setActivity(argresult, {type:'WATCHING'});
+            message.channel.sendMessage(`**  ${argresult} تم تغيير الحاله الي :white_check_mark:**`);
+        }else
+          if (message.content.startsWith(adminprefix + 'ls')) {
+            client.user.setActivity(argresult , {type:'LISTENING'});
+              message.channel.sendMessage(`**  ${argresult} تم تغيير الحاله الي :white_check_mark:**`)
 }
 });
 
